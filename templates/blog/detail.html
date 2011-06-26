@@ -1,0 +1,23 @@
+{% extends "blog/base.html" %}
+{% block content %}
+<p>{{ blog.title }}</p><p>{{ blog.body }}</p><p>{{blog.created}}</p>{{blog.updated}}
+{% for c in comments %}
+<li>{{c.comment_title}}</li>
+<li>{{c.comment_author}}
+<li>{{c.comment_body}}
+<li>{{c.comment_created}}
+<li>{{c.comment_updated}}
+<div>Last updated on {{ c.comment_updated }}</div>
+<div><a href="/blog/editcomment/{{ comm.id }}">Edit
+Comment</a></div>
+
+{% endfor %}
+<br />
+
+<div>New Comment</div>
+<form method='post' action="">
+{{ form }}
+<input type='submit' name='Submit'>
+</form>
+
+{% endblock %}

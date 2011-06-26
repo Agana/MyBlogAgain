@@ -1,0 +1,7 @@
+{% extends "blog/base.html" %}
+{% block content %}
+<p>{{r}}</p>
+{% for term in blog_list %}
+<li>{{blog.title}}</li>
+{% endblock %}
+
